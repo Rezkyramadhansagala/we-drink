@@ -1,0 +1,323 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style: none;
+    font-family: "Poppins", "Roboto", sans-serif; /* Menggunakan Poppins agar lebih modern */
+}
+
+:root {
+    --bg-color: #31e0cf;
+    --text-color: #ffffff;
+    --main-color: #ae8957; /* Warna aksen emas/coklat */
+    --big-font: 5rem;
+    --p-font: 1rem;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* ==================================================
+   NAVBAR & HEADER STYLING DENGAN HOVER EFFECT
+   ================================================== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+    background-color: rgba(49, 224, 207, 0.95); /* Sedikit transparan / glassmorphism */
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 140px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.navlist {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.navlist li {
+    margin: 0 15px;
+}
+
+/* Animasi Hover Navbar (Underline Slide) */
+.navlist a {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navlist a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+}
+
+.navlist a:hover::after {
+    width: 100%;
+}
+
+/* Tombol Sign In */
+.nav-btn {
+    display: inline-block;
+    padding: 8px 24px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    border-radius: 25px;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.nav-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#menu-icons {
+    font-size: 42px;
+    z-index: 10001;
+    cursor: pointer;
+    margin-left: 20px;
+    display: none;
+}
+
+/* ==================================================
+   HERO SECTION
+   ================================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url('img/image.jpeg') no-repeat center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+    padding: 0 10%;
+}
+
+/* Supaya background gambar hero sedikit tertutup gradasi jika terlalu terang */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(49, 224, 207, 0.9), rgba(49, 224, 207, 0.4));
+    z-index: -1;
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0px 15px 15px rgba(0,0,0,0.2));
+}
+
+.hero-text h1 {
+    font-size: var(--big-font);
+    font-weight: 900;
+    margin: 15px 0;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-text h5 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.hero-text p {
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Tombol Custom (Order Now) */
+.btn-custom {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--main-color);
+    border-radius: 30px;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 10px rgba(174, 137, 87, 0.4);
+}
+
+.btn-custom:hover {
+    transform: translateY(-5px);
+    background: #c39c65; /* Warna hover sedikit lebih terang */
+    color: white;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 5%;
+    right: 7%;
+}
+
+.scroll a {
+    font-size: 16px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s;
+}
+
+.scroll a:hover {
+    transform: translateY(5px);
+}
+
+/* ==================================================
+   CARD MENU (EFEK ZOOM IN SAAT DI HOVER)
+   ================================================== */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card img {
+    height: 250px;
+    object-fit: contain;
+    padding: 15px;
+    background: #f8f9fa; /* Background abu-abu halus untuk gambar menu */
+}
+
+/* Efek tombol beli di Card */
+.card .btn-success {
+    transition: all 0.3s ease;
+}
+.card .btn-success:hover {
+    transform: scale(1.1);
+    background-color: #198754;
+}
+
+/* ==================================================
+   RESPONSIVE LAYOUT
+   ================================================== */
+@media (max-width: 1150px) {
+    :root {
+        --big-font: 4rem;
+    }
+}
+
+@media (max-width: 950px) {
+    #menu-icons {
+        display: block;
+    }
+    
+    .navlist {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 50px;
+        top: 0;
+        right: -100%;
+        display: flex;
+        flex-direction: column;
+        background: rgba(49, 224, 207, 0.98);
+        backdrop-filter: blur(15px);
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .navlist.open {
+        right: 0;
+    }
+    
+    .navlist a {
+        display: block;
+        margin: 15px 0;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 920px) {
+    .scroll {
+        display: none;
+    }
+    
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 150px;
+        text-align: center;
+    }
+    
+    .hero-text p {
+        margin: 0 auto 30px auto;
+    }
+    
+    .main-hero {
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-img {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 570px) {
+    :root {
+        --big-font: 3rem;
+    }
+    .hero-img {
+        max-width: 250px;
+    }
+}
