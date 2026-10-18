@@ -1,1421 +1,173 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WE DRINK - Project</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap.min.css" />
-    <!-- FontAwesome -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="fontawesome-free/css/all.min.css"
-    />
-    <!-- AOS Animation -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- Boxicons & Remixicons -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Header / Navbar -->
-    <header id="header">
-      <a href="#" class="logo">
-        <img src="img/Logo-Wedrink2-04-1536x375.png" alt="Wedrink Logo" />
-      </a>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WEDRINK — Minuman Segar Tebing Tinggi</title>
+<meta name="description" content="Menu WEDRINK Tebing Tinggi: boba, milk tea, sundae, smoothies, dan coffee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body>
+<div class="progress" id="progress"></div>
 
-      <ul class="navlist">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#location">Location</a></li>
-      </ul>
+<header id="header">
+  <a href="#home" class="logo"><img src="img/Logo-Wedrink2-04-1536x375.png" alt="Wedrink Logo"></a>
+  <ul class="navlist" id="navlist">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#order">Order</a></li>
+  </ul>
+  <div class="right-content">
+    <button class="cart-btn" id="cartBtn" aria-label="Buka keranjang"><iconify-icon icon="lucide:shopping-bag"></iconify-icon><span id="cartCount">0</span></button>
+    <a href="#order" class="nav-btn">Order Now</a>
+    <button class="burger" id="menuIcon" aria-label="Menu"><iconify-icon icon="lucide:menu"></iconify-icon></button>
+  </div>
+</header>
 
-      <div class="right-content">
-        <a href="#order" class="nav-btn">Sign In</a>
-        <div class="bx bx-menu" id="menu-icons"></div>
-      </div>
-    </header>
+<section id="home" class="hero">
+  <span class="bub b1"></span><span class="bub b2"></span><span class="bub b3"></span><span class="bub b4"></span>
+  <div class="hero-text">
+    <span class="pill"><iconify-icon icon="lucide:sparkles"></iconify-icon> Selamat datang di website</span>
+    <h1>WEDRINK</h1>
+    <h2 class="sub">Seruput <span id="typed"></span><span class="caret">|</span></h2>
+    <p>Layanan utama kami untuk pelanggan: dilayani dengan tulus dan integritas, membawa rasa manis dan kegembiraan di setiap gelas.</p>
+    <div class="hero-cta">
+      <a href="#menu" class="btn-main">Lihat Menu <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+      <div class="price-tag"><small>Mulai dari</small><b>Rp10.000 – Rp35.000</b></div>
+    </div>
+  </div>
+  <div class="hero-img" id="heroImg">
+    <div class="disc"></div>
+    <img src="img/images-removebg-preview (2).png" alt="Minuman Wedrink">
+    <div class="chip c1"><iconify-icon icon="lucide:leaf"></iconify-icon> Gula asli</div>
+    <div class="chip c2"><iconify-icon icon="lucide:snowflake"></iconify-icon> Segar &amp; dingin</div>
+  </div>
+  <a href="#menu" class="scroll"><iconify-icon icon="lucide:mouse"></iconify-icon> Scroll down</a>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 40c240 60 480 60 720 20s480-40 720 10v20H0z" fill="#f4fbfa"/></svg>
+</section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-text">
-        <h5 data-aos="fade-right" data-aos-duration="1400" class="mt-5">
-          Selamat Datang Di Website
-        </h5>
-        <h1
-          data-aos="zoom-in-left"
-          data-aos-duration="1400"
-          data-aos-delay="200"
-        >
-          WEDRINK KAMI
-        </h1>
-        <p data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300">
-          Perusahaan “WEDRINK” menganut konsep layanan utama kepada pelanggan,
-          menjadikan mitra dan konsumen sebagai inti, beroperasi dengan
-          integritas, dan melayani dengan tulus, menjadikan mitra kaya dan
-          membawakan rasa manis dan kegembiraan bagi konsumen.
-        </p>
+<section class="stats">
+  <div class="wrap grid3">
+    <div class="stat reveal"><iconify-icon icon="lucide:cup-soda"></iconify-icon><b data-count="39" data-suffix="">0</b><span>Varian menu</span></div>
+    <div class="stat reveal"><iconify-icon icon="lucide:store"></iconify-icon><b data-count="3000" data-suffix="+">0</b><span>Toko di dunia</span></div>
+    <div class="stat reveal"><iconify-icon icon="lucide:wallet"></iconify-icon><b>Rp10rb</b><span>Harga mulai</span></div>
+  </div>
+</section>
 
-        <div
-          class="main-hero"
-          data-aos="flip-down"
-          data-aos-duration="1400"
-          data-aos-delay="400"
-        >
-          <a href="#menu" class="btn-custom">Order Now</a>
-          <a href="#" class="price text-white" style="text-decoration: none">
-            Dengan Harga |
-            <span style="color: var(--main-color); margin-left: 10px"
-              >Rp.10.000 - Rp.35.000</span
-            >
-          </a>
-        </div>
-      </div>
+<section id="about" class="section about">
+  <div class="wrap two">
+    <div class="reveal">
+      <p class="eyebrow">Tentang kami</p>
+      <h2 class="title">Brand minuman asal China, kini hadir di Tebing Tinggi</h2>
+      <p class="muted">WEDRINK telah membuka lebih dari 3.000 toko di dunia. Cabang Tebing Tinggi berada di Jl. Pahlawan No.2b, Ps. Gambir, Kec. Tebing Tinggi Kota, Sumatera Utara 20616.</p>
+      <ul class="ticks"><li>Menjadikan mitra dan konsumen sebagai inti layanan</li><li>Beroperasi dengan integritas dan melayani dengan tulus</li><li>Membawa rasa manis dan kegembiraan untuk setiap pelanggan</li></ul>
+      <a href="#location" class="btn-line">Kunjungi toko kami</a>
+    </div>
+    <div class="about-card reveal"><iconify-icon icon="lucide:heart-handshake"></iconify-icon><h3>Rasa manis, pelayanan tulus</h3><p>Dari sundae lembut sampai milk tea boba, semuanya dibuat dengan bahan pilihan dan gula asli.</p></div>
+  </div>
+</section>
 
-      <div class="hero-img" data-aos="zoom-in" data-aos-duration="1400">
-        <img
-          src="img/images-removebg-preview (2).png"
-          width="500"
-          alt="Minuman Wedrink"
-        />
-      </div>
+<section id="menu" class="section menu">
+  <div class="wrap">
+    <div class="center reveal"><p class="eyebrow">Menu kami</p><h2 class="title">Pilih minuman favoritmu</h2><p class="muted">Tekan tombol <b>+</b> untuk menambahkan ke keranjang, lalu kirim pesanan lewat form di bawah.</p></div>
+    <div class="toolbar reveal">
+      <div class="searchbox"><iconify-icon icon="lucide:search"></iconify-icon><input type="search" id="search" placeholder="Cari menu, misal: matcha, boba, mango" aria-label="Cari menu"></div>
+    </div>
+    <div class="tabs" id="tabs"><button class="tab active" data-f="all">Semua</button><button class="tab" data-f="new">New Menu</button><button class="tab" data-f="rec">Recommended</button><button class="tab" data-f="sundae">Sundae</button><button class="tab" data-f="milktea">Milk Tea</button><button class="tab" data-f="milkshake">MilkShake</button><button class="tab" data-f="fresh">Fresh</button><button class="tab" data-f="smoothies">Smoothies</button><button class="tab" data-f="coffee">Coffee</button></div>
+    <p class="count" id="count"></p>
+    <div class="dgrid" id="dgrid">
+<article class="dcard" data-id="1" data-cat="new" data-name="Grass Jelly Red Bean Delight" data-price="10000"><div class="dimg"><img src="img/img1.webp" alt="Grass Jelly Red Bean Delight" loading="lazy"><span class="dcat">New Menu</span></div><div class="dbody"><h3>Grass Jelly Red Bean Delight</h3><p>Dessert khas Wedrink dengan perpaduan cincau dan kacang merah.</p><div class="dfoot"><div><b>Rp 10.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Grass Jelly Red Bean Delight"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="2" data-cat="rec" data-name="Red Bean Matcha Sundae" data-price="17000"><div class="dimg"><img src="img/img2.webp" alt="Red Bean Matcha Sundae" loading="lazy"><span class="dcat">Recommended</span></div><div class="dbody"><h3>Red Bean Matcha Sundae</h3><p>Ice cream matcha yang lembut dengan taburan kacang merah khas Wedrink.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Red Bean Matcha Sundae"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="3" data-cat="rec" data-name="Ice Fresh Passion Fruit Tea" data-price="12000"><div class="dimg"><img src="img/img3.webp" alt="Ice Fresh Passion Fruit Tea" loading="lazy"><span class="dcat">Recommended</span></div><div class="dbody"><h3>Ice Fresh Passion Fruit Tea</h3><p>Teh buah dengan markisa asli di atasnya dan sirup markisa khas Wedrink.</p><div class="dfoot"><div><b>Rp 12.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Ice Fresh Passion Fruit Tea"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="4" data-cat="rec" data-name="Grape Lemon Tea" data-price="13000"><div class="dimg"><img src="img/img4.webp" alt="Grape Lemon Tea" loading="lazy"><span class="dcat">Recommended</span></div><div class="dbody"><h3>Grape Lemon Tea</h3><p>Teh lemon dengan campuran anggur dan coconut jelly yang kenyal.</p><div class="dfoot"><div><b>Rp 13.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Grape Lemon Tea"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="5" data-cat="rec" data-name="Super Fruit Bucket (Peach)" data-price="29000"><div class="dimg"><img src="img/img5.webp" alt="Super Fruit Bucket (Peach)" loading="lazy"><span class="dcat">Recommended</span></div><div class="dbody"><h3>Super Fruit Bucket (Peach)</h3><p>Campuran buah segar dan sirup peach.</p><div class="dfoot"><div><b>Rp 29.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Super Fruit Bucket (Peach)"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="6" data-cat="rec" data-name="Chocolate Oreo Sundae" data-price="17000"><div class="dimg"><img src="img/img6.webp" alt="Chocolate Oreo Sundae" loading="lazy"><span class="dcat">Recommended</span></div><div class="dbody"><h3>Chocolate Oreo Sundae</h3><p>Ice cream vanilla dengan saus cokelat lumer dan taburan Oreo.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Chocolate Oreo Sundae"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="7" data-cat="rec" data-name="Six Grapes Fruit Tea" data-price="22000"><div class="dimg"><img src="img/img7.webp" alt="Six Grapes Fruit Tea" loading="lazy"><span class="dcat">Recommended</span></div><div class="dbody"><h3>Six Grapes Fruit Tea</h3><p>Fruit tea segar dengan campuran anggur asli.</p><div class="dfoot"><div><b>Rp 22.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Six Grapes Fruit Tea"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="8" data-cat="sundae" data-name="Mango Sundae" data-price="17000"><div class="dimg"><img src="img/img8.webp" alt="Mango Sundae" loading="lazy"><span class="dcat">Sundae</span></div><div class="dbody"><h3>Mango Sundae</h3><p>Ice cream vanilla dengan mangga fresh yang menyegarkan dan jelly kenyal.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Mango Sundae"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="9" data-cat="sundae" data-name="Brown Sugar Pearl Sundae" data-price="12000"><div class="dimg"><img src="img/img9.webp" alt="Brown Sugar Pearl Sundae" loading="lazy"><span class="dcat">Sundae</span></div><div class="dbody"><h3>Brown Sugar Pearl Sundae</h3><p>Ice cream vanilla lembut dengan brown sugar dan boba kenyal tanpa tambahan gula.</p><div class="dfoot"><div><b>Rp 12.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Brown Sugar Pearl Sundae"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="10" data-cat="sundae" data-name="Super Grass Jelly Sundae" data-price="17000"><div class="dimg"><img src="img/img10.webp" alt="Super Grass Jelly Sundae" loading="lazy"><span class="dcat">Sundae</span></div><div class="dbody"><h3>Super Grass Jelly Sundae</h3><p>Ice cream vanilla dengan crunched cone crispy, cincau dan coconut jelly manis.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Super Grass Jelly Sundae"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="11" data-cat="sundae" data-name="Blueberry Sundae" data-price="17500"><div class="dimg"><img src="img/img11.webp" alt="Blueberry Sundae" loading="lazy"><span class="dcat">Sundae</span></div><div class="dbody"><h3>Blueberry Sundae</h3><p>Ice cream vanilla dengan selai blueberry spesial dan potongan blueberry.</p><div class="dfoot"><div><b>Rp 17.500</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Blueberry Sundae"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="12" data-cat="sundae" data-name="Peach Sundae" data-price="17490"><div class="dimg"><img src="img/img12.webp" alt="Peach Sundae" loading="lazy"><span class="dcat">Sundae</span></div><div class="dbody"><h3>Peach Sundae</h3><p>Ice cream vanilla dengan saus peach yang menyegarkan, cocok di hari panas.</p><div class="dfoot"><div><b>Rp 17.490</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Peach Sundae"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="13" data-cat="sundae" data-name="Strawberry Sundae" data-price="17000"><div class="dimg"><img src="img/img13.webp" alt="Strawberry Sundae" loading="lazy"><span class="dcat">Sundae</span></div><div class="dbody"><h3>Strawberry Sundae</h3><p>Ice cream vanilla khas Wedrink dengan selai strawberry dan potongan jelly.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Strawberry Sundae"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="14" data-cat="milktea" data-name="Super Milk Tea Bucket 3 Toppings" data-price="30000"><div class="dimg"><img src="img/img14.webp" alt="Super Milk Tea Bucket 3 Toppings" loading="lazy"><span class="dcat">Milk Tea</span></div><div class="dbody"><h3>Super Milk Tea Bucket 3 Toppings</h3><p>Milk tea khas Wedrink dengan full topping cincau, boba dan coconut jelly.</p><div class="dfoot"><div><b>Rp 30.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Super Milk Tea Bucket 3 Toppings"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="15" data-cat="milktea" data-name="Brown Sugar Pearl Milk Tea (Regular)" data-price="22500"><div class="dimg"><img src="img/img15.webp" alt="Brown Sugar Pearl Milk Tea (Regular)" loading="lazy"><span class="dcat">Milk Tea</span></div><div class="dbody"><h3>Brown Sugar Pearl Milk Tea (Regular)</h3><p>Milk tea khas Wedrink dengan gula aren dan boba kenyal.</p><div class="dfoot"><div><b>Rp 22.500</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Brown Sugar Pearl Milk Tea (Regular)"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="16" data-cat="milktea" data-name="Brown Sugar Pearl Milk Tea (Large)" data-price="26000"><div class="dimg"><img src="img/img16.webp" alt="Brown Sugar Pearl Milk Tea (Large)" loading="lazy"><span class="dcat">Milk Tea</span></div><div class="dbody"><h3>Brown Sugar Pearl Milk Tea (Large)</h3><p>Milk tea khas Wedrink dengan gula aren dan boba kenyal, ukuran large.</p><div class="dfoot"><div><b>Rp 26.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Brown Sugar Pearl Milk Tea (Large)"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="17" data-cat="milktea" data-name="Super Grass Jelly Milk Tea" data-price="24000"><div class="dimg"><img src="img/img17.webp" alt="Super Grass Jelly Milk Tea" loading="lazy"><span class="dcat">Milk Tea</span></div><div class="dbody"><h3>Super Grass Jelly Milk Tea</h3><p>Milk tea khas Wedrink dengan potongan cincau yang banyak.</p><div class="dfoot"><div><b>Rp 24.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Super Grass Jelly Milk Tea"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="18" data-cat="milktea" data-name="Coconut Jelly Milk Tea (Regular)" data-price="21000"><div class="dimg"><img src="img/img18.webp" alt="Coconut Jelly Milk Tea (Regular)" loading="lazy"><span class="dcat">Milk Tea</span></div><div class="dbody"><h3>Coconut Jelly Milk Tea (Regular)</h3><p>Milk tea khas Wedrink dengan topping coconut jelly yang manis dan kenyal.</p><div class="dfoot"><div><b>Rp 21.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Coconut Jelly Milk Tea (Regular)"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="19" data-cat="milktea" data-name="Coconut Jelly Milk Tea (Large)" data-price="26000"><div class="dimg"><img src="img/img19.webp" alt="Coconut Jelly Milk Tea (Large)" loading="lazy"><span class="dcat">Milk Tea</span></div><div class="dbody"><h3>Coconut Jelly Milk Tea (Large)</h3><p>Milk tea khas Wedrink dengan gula asli dan topping coconut jelly, ukuran large.</p><div class="dfoot"><div><b>Rp 26.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Coconut Jelly Milk Tea (Large)"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="20" data-cat="milkshake" data-name="Matcha MilkShake" data-price="17000"><div class="dimg"><img src="img/img20.webp" alt="Matcha MilkShake" loading="lazy"><span class="dcat">MilkShake</span></div><div class="dbody"><h3>Matcha MilkShake</h3><p>Milkshake matcha khas Wedrink dengan gula asli dan taburan kacang merah.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Matcha MilkShake"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="21" data-cat="milkshake" data-name="Strawberry Milkshake" data-price="17000"><div class="dimg"><img src="img/img21.webp" alt="Strawberry Milkshake" loading="lazy"><span class="dcat">MilkShake</span></div><div class="dbody"><h3>Strawberry Milkshake</h3><p>Milkshake strawberry dengan gula asli dan topping selai.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Strawberry Milkshake"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="22" data-cat="milkshake" data-name="MilkShake Boba" data-price="17000"><div class="dimg"><img src="img/img22.webp" alt="MilkShake Boba" loading="lazy"><span class="dcat">MilkShake</span></div><div class="dbody"><h3>MilkShake Boba</h3><p>Milkshake dengan boba, brown sugar dan sundae vanilla yang manis.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah MilkShake Boba"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="23" data-cat="milkshake" data-name="Raspberry MilkShake" data-price="17000"><div class="dimg"><img src="img/img23.webp" alt="Raspberry MilkShake" loading="lazy"><span class="dcat">MilkShake</span></div><div class="dbody"><h3>Raspberry MilkShake</h3><p>Milkshake dengan coconut jelly, sirup raspberry dan selai strawberry.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Raspberry MilkShake"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="24" data-cat="milkshake" data-name="Mocha MilkShake" data-price="17000"><div class="dimg"><img src="img/img24.webp" alt="Mocha MilkShake" loading="lazy"><span class="dcat">MilkShake</span></div><div class="dbody"><h3>Mocha MilkShake</h3><p>Milkshake dengan boba, perpaduan saus cokelat dan coffee liquid.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Mocha MilkShake"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="25" data-cat="milkshake" data-name="Grape MilkShake" data-price="17000"><div class="dimg"><img src="img/img25.webp" alt="Grape MilkShake" loading="lazy"><span class="dcat">MilkShake</span></div><div class="dbody"><h3>Grape MilkShake</h3><p>Milkshake anggur khas Wedrink dengan buah anggur fresh dan gula asli.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Grape MilkShake"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="26" data-cat="fresh" data-name="Fresh Raspberry Orange" data-price="24000"><div class="dimg"><img src="img/img26.webp" alt="Fresh Raspberry Orange" loading="lazy"><span class="dcat">Fresh</span></div><div class="dbody"><h3>Fresh Raspberry Orange</h3><p>Minuman raspberry segar dengan potongan jeruk dan coconut jelly.</p><div class="dfoot"><div><b>Rp 24.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Fresh Raspberry Orange"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="27" data-cat="fresh" data-name="Blueberry Seed Tea" data-price="20000"><div class="dimg"><img src="img/img27.webp" alt="Blueberry Seed Tea" loading="lazy"><span class="dcat">Fresh</span></div><div class="dbody"><h3>Blueberry Seed Tea</h3><p>Campuran selai blueberry, coconut jelly, gula asli dan sirup buah.</p><div class="dfoot"><div><b>Rp 20.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Blueberry Seed Tea"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="28" data-cat="fresh" data-name="Fresh Squeezed Lemonade" data-price="13000"><div class="dimg"><img src="img/img28.webp" alt="Fresh Squeezed Lemonade" loading="lazy"><span class="dcat">Fresh</span></div><div class="dbody"><h3>Fresh Squeezed Lemonade</h3><p>Rasa lemon dengan potongan lemon asli khas Wedrink.</p><div class="dfoot"><div><b>Rp 13.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Fresh Squeezed Lemonade"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="29" data-cat="fresh" data-name="Passion Fruit Pearl &amp; Jelly Tea" data-price="24000"><div class="dimg"><img src="img/img29.webp" alt="Passion Fruit Pearl &amp; Jelly Tea" loading="lazy"><span class="dcat">Fresh</span></div><div class="dbody"><h3>Passion Fruit Pearl &amp; Jelly Tea</h3><p>Teh buah markisa dengan boba kenyal dan coconut jelly.</p><div class="dfoot"><div><b>Rp 24.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Passion Fruit Pearl &amp; Jelly Tea"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="30" data-cat="fresh" data-name="Lemon Black Tea" data-price="14000"><div class="dimg"><img src="img/img30.webp" alt="Lemon Black Tea" loading="lazy"><span class="dcat">Fresh</span></div><div class="dbody"><h3>Lemon Black Tea</h3><p>Teh lemon dengan gula asli dan irisan punched lemon.</p><div class="dfoot"><div><b>Rp 14.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Lemon Black Tea"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="31" data-cat="fresh" data-name="Super Fruit Bucket (Passion Fruit)" data-price="29000"><div class="dimg"><img src="img/img31.webp" alt="Super Fruit Bucket (Passion Fruit)" loading="lazy"><span class="dcat">Fresh</span></div><div class="dbody"><h3>Super Fruit Bucket (Passion Fruit)</h3><p>Campuran buah segar dan sirup markisa yang manis.</p><div class="dfoot"><div><b>Rp 29.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Super Fruit Bucket (Passion Fruit)"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="32" data-cat="smoothies" data-name="Chocolate Oreo Smoothies Snow Top" data-price="17000"><div class="dimg"><img src="img/img32.webp" alt="Chocolate Oreo Smoothies Snow Top" loading="lazy"><span class="dcat">Smoothies</span></div><div class="dbody"><h3>Chocolate Oreo Smoothies Snow Top</h3><p>Iced blend dengan Oreo asli dan lumeran saus cokelat yang bikin ketagihan.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Chocolate Oreo Smoothies Snow Top"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="33" data-cat="smoothies" data-name="Peach Ice Smoothies Snow Top" data-price="17000"><div class="dimg"><img src="img/img33.webp" alt="Peach Ice Smoothies Snow Top" loading="lazy"><span class="dcat">Smoothies</span></div><div class="dbody"><h3>Peach Ice Smoothies Snow Top</h3><p>Smoothie peach dengan ice cream vanilla di atasnya.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Peach Ice Smoothies Snow Top"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="34" data-cat="smoothies" data-name="Coffee Smoothies Snow Top" data-price="17000"><div class="dimg"><img src="img/img34.webp" alt="Coffee Smoothies Snow Top" loading="lazy"><span class="dcat">Smoothies</span></div><div class="dbody"><h3>Coffee Smoothies Snow Top</h3><p>Perpaduan coffee dan cokelat dengan gula asli dan ice cream vanilla.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Coffee Smoothies Snow Top"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="35" data-cat="smoothies" data-name="Mango Smoothies With Coconut Jelly" data-price="26000"><div class="dimg"><img src="img/img35.webp" alt="Mango Smoothies With Coconut Jelly" loading="lazy"><span class="dcat">Smoothies</span></div><div class="dbody"><h3>Mango Smoothies With Coconut Jelly</h3><p>Smoothie mangga segar dengan taburan coconut jelly.</p><div class="dfoot"><div><b>Rp 26.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Mango Smoothies With Coconut Jelly"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="36" data-cat="smoothies" data-name="Strawberry Ice Smoothie Snow Top" data-price="17000"><div class="dimg"><img src="img/img36.webp" alt="Strawberry Ice Smoothie Snow Top" loading="lazy"><span class="dcat">Smoothies</span></div><div class="dbody"><h3>Strawberry Ice Smoothie Snow Top</h3><p>Perpaduan selai strawberry dan jasmine tea khas Wedrink.</p><div class="dfoot"><div><b>Rp 17.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Strawberry Ice Smoothie Snow Top"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="37" data-cat="coffee" data-name="Cappucino" data-price="14000"><div class="dimg"><img src="img/img40.webp" alt="Cappucino" loading="lazy"><span class="dcat">Coffee</span></div><div class="dbody"><h3>Cappucino</h3><p>Ice cappucino dengan perpaduan coffee dan susu yang pas.</p><div class="dfoot"><div><b>Rp 14.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4</small></div><button class="add" type="button" aria-label="Tambah Cappucino"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="38" data-cat="coffee" data-name="Iced Americano Coffee" data-price="14000"><div class="dimg"><img src="img/img38.webp" alt="Iced Americano Coffee" loading="lazy"><span class="dcat">Coffee</span></div><div class="dbody"><h3>Iced Americano Coffee</h3><p>Ice coffee dari biji pilihan dengan gula asli.</p><div class="dfoot"><div><b>Rp 14.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 5</small></div><button class="add" type="button" aria-label="Tambah Iced Americano Coffee"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+<article class="dcard" data-id="39" data-cat="coffee" data-name="Coffee Latte" data-price="14000"><div class="dimg"><img src="img/img39.webp" alt="Coffee Latte" loading="lazy"><span class="dcat">Coffee</span></div><div class="dbody"><h3>Coffee Latte</h3><p>Perpaduan latte dan ice yang menyegarkan.</p><div class="dfoot"><div><b>Rp 14.000</b><small><iconify-icon icon="mdi:star"></iconify-icon> 4.5</small></div><button class="add" type="button" aria-label="Tambah Coffee Latte"><iconify-icon icon="lucide:plus"></iconify-icon></button></div></div></article>
+    </div>
+    <div class="empty" id="empty" hidden><iconify-icon icon="lucide:search-x"></iconify-icon><p>Menu tidak ditemukan. Coba kata kunci lain.</p></div>
+  </div>
+</section>
 
-      <div
-        class="scroll"
-        data-aos="zoom-out-down"
-        data-aos-duration="1400"
-        data-aos-delay="550"
-      >
-        <a href="#menu" style="text-decoration: none"
-          ><i class="ri-scroll-to-bottom-line"></i>Scroll Down</a
-        >
-      </div>
-    </section>
+<section id="location" class="section">
+  <div class="wrap">
+    <div class="center reveal"><p class="eyebrow">Kunjungi kami</p><h2 class="title">Lokasi WEDRINK Tebing Tinggi</h2></div>
+    <div class="map reveal"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2368.3602148426094!2d99.15858597656269!3d3.327635584194471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303161c8cd64e245%3A0x538db90c7f2f8108!2sWEDRINK%20TEBING%20TINGGI!5e0!3m2!1sid!2sid!4v1732435532870!5m2!1sid!2sid" allowfullscreen loading="lazy" title="Peta WEDRINK Tebing Tinggi"></iframe></div>
+  </div>
+</section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu pb-5 pt-5">
-      <div
-        class="text-center mb-5"
-        data-aos="zoom-in-up"
-        data-aos-duration="1400"
-      >
-        <h1 class="fw-bold">Menu Kami</h1>
-        <p>Kami Banyak Menyediakan Berbagai Menu Diantaranya Ada:</p>
-      </div>
+<section id="order" class="section order">
+  <div class="wrap narrow">
+    <div class="center reveal"><p class="eyebrow">Pesan sekarang</p><h2 class="title">Order Now</h2></div>
+    <form id="orderForm" class="form reveal">
+      <label>Nama Anda<input type="text" id="fName" placeholder="Masukkan nama Anda" required></label>
+      <label>Nama Pesanan<textarea id="fOrder" rows="3" placeholder="Pilih dari menu atau tulis pesanan Anda" required></textarea></label>
+      <div class="total-row"><span>Total</span><b id="fTotal">Rp 0</b></div>
+      <label>No Telepon<input type="tel" id="fPhone" placeholder="+62" required></label>
+      <label>Alamat<textarea id="fAddr" rows="3" placeholder="Masukkan alamat Anda" required></textarea></label>
+      <label class="check"><input type="checkbox" id="fCheck" required> Pastikan pesanan sudah benar</label>
+      <button class="btn-main full" type="submit"><iconify-icon icon="lucide:send"></iconify-icon> Simpan / Kirim Pesanan</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
+  </div>
+</section>
 
-      <!-- NEW MENU -->
-      <div class="container mb-5">
-        <h2
-          class="mb-4 text-start fw-bold"
-          data-aos="fade-right"
-          data-aos-duration="1400"
-        >
-          New Menu
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100" data-aos="zoom-in" data-aos-duration="1400">
-              <img src="img/img1.webp" class="card-img-top" alt="Grass Jelly" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Grass Jelly Red Bean Delight
-                </h5>
-                <p class="card-text text-secondary">
-                  Dessert Khas Wedrink Dengan Perpaduan Cincau dan Kacang Merah.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 10.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<footer id="footer">
+  <div class="wrap fgrid">
+    <div><h4>Layanan Pelanggan</h4><ul><li><a href="#">Pusat Bantuan</a></li><li><a href="#order">Cara Pemesanan</a></li><li><a href="#">Pengiriman</a></li><li><a href="#">Cara Pengembalian</a></li></ul></div>
+    <div><h4>Tentang Kami</h4><p>Wedrink merupakan brand minuman ternama asal China dengan lebih dari 3.000 toko di dunia. Cabang Tebing Tinggi: Jl. Pahlawan No.2b, Ps. Gambir, Tebing Tinggi Kota, Sumatera Utara 20616.</p></div>
+    <div><h4>Mitra Kerjasama</h4><ul><li>GOJEK &amp; GOFOOD</li><li>GRAB</li><li>PT. POS Indonesia</li><li>MPL ID</li></ul></div>
+    <div><h4>Hubungi Kami</h4><ul><li><iconify-icon icon="lucide:phone"></iconify-icon> 02152399666</li><li><iconify-icon icon="lucide:mail"></iconify-icon> Wedrink@gmail.com</li></ul></div>
+  </div>
+  <div class="wrap copy"><span>© <span id="year">2026</span> WEDRINK. Copyright Rezky Ramadhan Sagala. All rights reserved.</span></div>
+</footer>
 
-      <!-- RECOMMENDED -->
-      <div class="container mb-5">
-        <h2
-          class="mb-4 text-start fw-bold"
-          data-aos="fade-right"
-          data-aos-duration="1400"
-        >
-          Recommended
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img2.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Red Bean Matcha Sundae
-                </h5>
-                <p class="card-text text-secondary">
-                  Ice Cream Matcha Yang Lembut Dengan Taburan Kacang Merah Khas
-                  Wedrink.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img3.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Ice Fresh Passion Fruit Tea
-                </h5>
-                <p class="card-text text-secondary">
-                  Teh Buah Dengan Markisa Asli Diatasnya Dan Sirup Markisa khas
-                  wedrink.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 12.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img4.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Grape Lemon Tea</h5>
-                <p class="card-text text-secondary">
-                  Teh Lemon Dengan Campuran Anggur Dan Coconut Jelly Yang Kenyal
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 13.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img5.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Super Fruit Bucket (Peach)
-                </h5>
-                <p class="card-text text-secondary">
-                  Super Fruit Bucket Campuran Dari Buah Segar dan Sirup Peach.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 29.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img6.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Chocolate Oreo Sundae
-                </h5>
-                <p class="card-text text-secondary">
-                  Ice Cream Vanilla Dengan Saus Coklat Lumer Dan Taburan Oreo.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img7.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Six Grapes Fruit Tea
-                </h5>
-                <p class="card-text text-secondary">
-                  Six Grapes Fruit Tea Segar Dengan Campuran Anggur Asli.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 22.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SUNDAE -->
-      <div class="container mb-5">
-        <h2
-          class="mb-4 text-start fw-bold"
-          data-aos="fade-right"
-          data-aos-duration="1400"
-        >
-          Sundae
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img8.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Mango Sundae</h5>
-                <p class="card-text text-secondary">
-                  Ice Cream Vanilla Dengan buah Mango fresh yang menyegarkan dan
-                  jelly yang kenyal.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img9.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Brown Sugar Pearl Sundae
-                </h5>
-                <p class="card-text text-secondary">
-                  Ice Cream Vanilla Lembut Dengan Brown Sugar Dan Boba Yang
-                  Kenyal Tanpa Tambahan Gula.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 12.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img10.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Super Grass Jelly Sundae
-                </h5>
-                <p class="card-text text-secondary">
-                  Ice Cream Vanilla Dengan Crunched Cone Crispy, Cincau Dan
-                  Coconut Jelly Yang Manis.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img11.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Blueberry Sundae</h5>
-                <p class="card-text text-secondary">
-                  Ice Cream Vanilla Dengan Campuran Selai Blueberry Spesial
-                  Dengan Potongan Blueberry.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.500</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img12.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Peach Sundae</h5>
-                <p class="card-text text-secondary">
-                  Ice Cream Vanilla Dengan Saus Peach Yang Menyegarkan Cocok Di
-                  Hari Panas.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.490</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img13.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Strawberry Sundae</h5>
-                <p class="card-text text-secondary">
-                  Ice Cream Vanilla Khas Wedrink Yang Lembut Dengan Selai
-                  Strawberry Dan Potongan Jelly.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MILK TEA -->
-      <div class="container mb-5">
-        <h2
-          class="mb-4 text-start fw-bold"
-          data-aos="fade-right"
-          data-aos-duration="1400"
-        >
-          Milk Tea
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img14.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Super Milk Tea Bucket 3 Toppings
-                </h5>
-                <p class="card-text text-secondary">
-                  Milk Tea Khas Wedrink dengan Full Topping Cincau, Boba Dan
-                  Coconut Jelly.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 30.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img15.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Brown Sugar Pearl Milk Tea (Regular)
-                </h5>
-                <p class="card-text text-secondary">
-                  Milk Tea Khas Wedrink Dengan Campuran Gula Aren dan Boba
-                  Kenyal.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 22.500</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img16.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Brown Sugar Pearl Milk Tea (Large)
-                </h5>
-                <p class="card-text text-secondary">
-                  Milk Tea Khas Wedrink Dengan Campuran Gula Aren dan Boba
-                  Kenyal (Large).
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 26.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img17.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Super Grass Jelly Milk Tea
-                </h5>
-                <p class="card-text text-secondary">
-                  Super Grass Jelly Milk Tea Khas Wedrink Dengan potongan Cincau
-                  Yang banyak.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 24.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img18.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Coconut Jelly Milk Tea (Regular)
-                </h5>
-                <p class="card-text text-secondary">
-                  Milk Tea Khas Wedrink Dengan Topping Coconut Jelly Yang Manis
-                  Dan Kenyal.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 21.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img19.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Coconut Jelly Milk Tea (Large)
-                </h5>
-                <p class="card-text text-secondary">
-                  Milk Tea Khas Wedrink Dengan Gula Asli Topping Coconut Jelly
-                  Yang Manis.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 26.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MILKSHAKE -->
-      <div class="container mb-5">
-        <h2
-          class="mb-4 text-start fw-bold"
-          data-aos="fade-right"
-          data-aos-duration="1400"
-        >
-          MilkShake
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img20.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Matcha MilkShake</h5>
-                <p class="card-text text-secondary">
-                  Milkshake Matcha Khas Wedrink Dengan Gula Asli Dan Taburan
-                  Kacang Merah.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img21.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Strawberry Milkshake
-                </h5>
-                <p class="card-text text-secondary">
-                  Milkshake Strawberry Dengan Gula Asli Rasa Strawberry Dan
-                  Topping Selai.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img22.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">MilkShake Boba</h5>
-                <p class="card-text text-secondary">
-                  Milkshake Boba Dengan Boba, Brown Sugar Dan Sundae Vanilla
-                  yang manis.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img23.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Raspberry MilkShake
-                </h5>
-                <p class="card-text text-secondary">
-                  MilkShake Dengan Coconut Jelly,Sirup Raspberry Dan Selai
-                  Strawberry.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img24.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Mocha MilkShake</h5>
-                <p class="card-text text-secondary">
-                  Mocha MilkShake Dengan Boba, Perpaduan Saus Cokelat Dan Coffee
-                  Liquid.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img25.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Grape MilkShake</h5>
-                <p class="card-text text-secondary">
-                  Milkshake Anggur Khas Wedrink Dengan Buah Anggur fresh Dengan
-                  Gula Asli.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- FRESH -->
-      <div class="container mb-5">
-        <h2
-          class="mb-4 text-start fw-bold"
-          data-aos="fade-right"
-          data-aos-duration="1400"
-        >
-          Fresh
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img26.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Fresh Raspberry Orange
-                </h5>
-                <p class="card-text text-secondary">
-                  Minuman Raspberry Segar Dengan Potongan Jeruk Dan Coconut
-                  Jelly khas Wedrink.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 24.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img27.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Blueberry Seed Tea</h5>
-                <p class="card-text text-secondary">
-                  Minuman Segar Campuran Selai Blueberry, Coconut Jelly, Gula
-                  Asli Dan Sirup Buah.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 20.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img28.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Fresh Squeezed Lemonade
-                </h5>
-                <p class="card-text text-secondary">
-                  Minuman Segar Dengan Rasa Lemon Dengan Potongan Lemon Asli
-                  Khas Wedrink.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 13.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img29.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Passion Fruit Pearl & Jelly Tea
-                </h5>
-                <p class="card-text text-secondary">
-                  Teh Buah Dengan Rasa Markisa Yang Ditaburi Boba kenyal Dan
-                  Coconut Jelly.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 24.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img30.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Lemon Black Tea</h5>
-                <p class="card-text text-secondary">
-                  Teh Lemon Dengan Gula Asli Juga Yang Menggunakan Irisan
-                  Punched Lemon.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 14.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img31.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Super Fruit Bucket (Passion Fruit)
-                </h5>
-                <p class="card-text text-secondary">
-                  Minuman Segar Dengan Campuran Dari Buah Segar Dan Sirup
-                  Markisa Yang Manis.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 29.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SMOOTHIES -->
-      <div class="container mb-5">
-        <h2
-          class="mb-4 text-start fw-bold"
-          data-aos="fade-right"
-          data-aos-duration="1400"
-        >
-          Smoothies
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img32.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Chocolate Oreo Smoothies Snow Top
-                </h5>
-                <p class="card-text text-secondary">
-                  Iced Blend Dengan Oreo Asli Dan Lumeran Saus Coklat Yang Manis
-                  Dan Bikin Ketagihan.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img33.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Peach Ice Smoothies Snow Top
-                </h5>
-                <p class="card-text text-secondary">
-                  Perpaduan Smoothie Peach Dengan Ice Cream Vanilla Diatasnya
-                  Khas Wedrink.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img34.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Coffee Smoothies Snow Top
-                </h5>
-                <p class="card-text text-secondary">
-                  Perpaduan Coffee Dan Coklat Dengan Gula asli Ice Cream Vanilla
-                  Diatasnya.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img35.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Mango Smoothies With Coconut Jelly
-                </h5>
-                <p class="card-text text-secondary">
-                  Smoothie Mangga Segar Khas Wedrink Dengan Taburan Coconut
-                  Jelly Diatasnya.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 26.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img36.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Strawberry Ice Smoothie Snow Top
-                </h5>
-                <p class="card-text text-secondary">
-                  Strawberry Ice Perpaduan Selai Strawberry dan Jasmine Tea Khas
-                  Wedrink.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 17.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- COFFEE -->
-      <div class="container mb-5">
-        <h2
-          class="mb-4 text-start fw-bold"
-          data-aos="fade-right"
-          data-aos-duration="1400"
-        >
-          Coffee
-        </h2>
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img40.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Cappucino</h5>
-                <p class="card-text text-secondary">
-                  Ice Cappucino Dengan Perpaduan Coffee Dan Susu Yang Pas Khas
-                  Wedrink.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="far fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 14.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img38.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">
-                  Iced Americano Coffee
-                </h5>
-                <p class="card-text text-secondary">
-                  Ice Coffee Dengan Biji Coffee Pilihan dengan gula Asli Khas
-                  Wedrink.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 14.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card h-100"
-              data-aos="zoom-in-up"
-              data-aos-duration="1400"
-            >
-              <img src="img/img39.webp" class="card-img-top" alt="Menu" />
-              <div class="card-body">
-                <h5 class="card-title text-dark fw-bold">Coffee Latte</h5>
-                <p class="card-text text-secondary">
-                  Coffee Dengan Perpaduan Latte Dan Ice Yang Menyegarkan Khas
-                  Wedrink.
-                </p>
-                <p class="text-warning">
-                  <i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                  ><i class="fas fa-star-half-alt"></i>
-                </p>
-                <a href="#" class="btn btn-outline-primary btn-sm"
-                  >RP. 14.000</a
-                >
-                <a href="#" class="btn btn-success btn-sm">Beli</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="location" class="location py-5 bg-light">
-      <div class="container">
-        <h2
-          class="text-center mb-4 fw-bold"
-          data-aos="zoom-in"
-          data-aos-duration="1000"
-        >
-          LOKASI WEDRINK TEBING TINGGI
-        </h2>
-        <div class="row justify-content-center">
-          <div class="col-md-10" data-aos="fade-up" data-aos-duration="1400">
-            <div class="ratio ratio-16x9 rounded shadow overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2368.3602148426094!2d99.15858597656269!3d3.327635584194471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303161c8cd64e245%3A0x538db90c7f2f8108!2sWEDRINK%20TEBING%20TINGGI!5e0!3m2!1sid!2sid!4v1732435532870!5m2!1sid!2sid"
-                allowfullscreen=""
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Order Form Section -->
-    <section id="order" class="py-5">
-      <div class="container">
-        <h2
-          class="text-center mb-5 fw-bold"
-          data-aos="fade-down"
-          data-aos-duration="1000"
-        >
-          ORDER NOW
-        </h2>
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <form
-              data-aos="fade-up"
-              data-aos-duration="1400"
-              class="p-4 shadow-lg rounded bg-white"
-            >
-              <div class="mb-3">
-                <label class="form-label fw-bold">Nama Anda</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Masukkan Nama Anda"
-                />
-              </div>
-              <div class="mb-3">
-                <label class="form-label fw-bold">Nama Pesanan</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Masukkan Pesanan Anda"
-                />
-              </div>
-              <div class="mb-3">
-                <label class="form-label fw-bold">No Telfon Anda</label>
-                <input type="tel" class="form-control" placeholder="+62" />
-              </div>
-              <div class="mb-3">
-                <label class="form-label fw-bold">Alamat</label>
-                <textarea
-                  class="form-control"
-                  rows="3"
-                  placeholder="Masukkan Alamat Anda"
-                ></textarea>
-              </div>
-              <div class="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="checkOrder"
-                />
-                <label class="form-check-label text-secondary" for="checkOrder"
-                  >Check Your Order (Pastikan pesanan sudah benar)</label
-                >
-              </div>
-              <button
-                type="submit"
-                class="btn btn-primary w-100 py-2 fw-bold text-white shadow"
-              >
-                SIMPAN / KIRIM PESANAN
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer id="about" class="bg-dark text-white pt-5 pb-3">
-      <div class="container">
-        <div class="row text-center text-md-start">
-          <div class="col-md-3 mb-4">
-            <h5 class="text-info fw-bold mb-3">LAYANAN PELANGGAN</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a href="#" class="text-white text-decoration-none footer-link"
-                  >Pusat Bantuan</a
-                >
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-white text-decoration-none footer-link"
-                  >Cara Pemesanan</a
-                >
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-white text-decoration-none footer-link"
-                  >Pengiriman</a
-                >
-              </li>
-              <li class="mb-2">
-                <a href="#" class="text-white text-decoration-none footer-link"
-                  >Cara Pengembalian</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-3 mb-4">
-            <h5 class="text-info fw-bold mb-3">TENTANG KAMI</h5>
-            <p
-              class="text-secondary"
-              style="font-size: 14px; text-align: justify"
-            >
-              Wedrink merupakan brand minuman ternama asal China dan telah
-              membuka lebih dari 3.000 toko di dunia. Di Tebing Tinggi cabang
-              kami berada di Jl. Pahlawan No.2b, Ps. Gambir, Kec. Tebing Tinggi
-              Kota, Sumatera Utara 20616.
-            </p>
-          </div>
-          <div class="col-md-3 mb-4">
-            <h5 class="text-info fw-bold mb-3">MITRA KERJASAMA</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <span class="text-secondary">GOJEK & GOFOOD</span>
-              </li>
-              <li class="mb-2"><span class="text-secondary">GRAB</span></li>
-              <li class="mb-2">
-                <span class="text-secondary">PT. POS Indonesia</span>
-              </li>
-              <li class="mb-2"><span class="text-secondary">MPL ID</span></li>
-            </ul>
-          </div>
-          <div class="col-md-3 mb-4">
-            <h5 class="text-info fw-bold mb-3">HUBUNGI KAMI</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2 text-secondary">
-                <i class="ri-phone-fill text-info"></i> 02152399666
-              </li>
-              <li class="mb-2 text-secondary">
-                <i class="ri-mail-fill text-info"></i> Wedrink@gmail.com
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Copyright (Individual Project) -->
-      <div class="text-center mt-4 pt-3 border-top border-secondary">
-        <p class="mb-0 text-secondary">
-          &copy; 2024 WEDRINK | Desain & Project Oleh
-          <span class="text-info">Rezky Ramadhan Sagala</span>
-        </p>
-      </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({ offset: 1 });
-    </script>
-  </body>
+<aside class="drawer" id="drawer" aria-label="Keranjang">
+  <div class="dr-head"><h3>Keranjang</h3><button id="drawerClose" aria-label="Tutup"><iconify-icon icon="lucide:x"></iconify-icon></button></div>
+  <div class="dr-list" id="drList"></div>
+  <div class="dr-foot"><div class="total-row"><span>Total</span><b id="drTotal">Rp 0</b></div><button class="btn-main full" id="toOrder" type="button">Lanjut ke form pesanan</button><button class="clear" id="clearCart" type="button">Kosongkan keranjang</button></div>
+</aside>
+<div class="overlay" id="overlay"></div>
+<div class="toast" id="toast" role="status"></div>
+<button class="to-top" id="toTop" aria-label="Kembali ke atas"><iconify-icon icon="lucide:arrow-up"></iconify-icon></button>
+<script src="js/script.js"></script>
+</body>
 </html>
