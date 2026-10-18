@@ -112,7 +112,13 @@ background:linear-gradient(120deg,rgba(10,111,103,.92),rgba(49,224,207,.78)),url
 .dimg{position:relative;background:linear-gradient(160deg,#e9fbf8,#d7f4ef);height:230px;overflow:hidden}
 .dimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:14px;transition:transform .5s}
 .dimg.broken img{display:none}
-.dimg.broken::after{content:'Gambar tidak ditemukan:\A ' attr(data-file);white-space:pre;position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:16px;font-size:.78rem;color:var(--muted)}
+.dimg .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--teal)}
+.dimg .ph iconify-icon{font-size:4.4rem;filter:drop-shadow(0 8px 10px rgba(16,181,166,.3));transition:transform .5s}
+.dcard:hover .dimg .ph iconify-icon{transform:scale(1.15) rotate(-6deg)}
+.dimg .ph span{font-size:.72rem;font-weight:600;color:var(--muted);padding:0 14px;text-align:center;line-height:1.3}
+.hero-fallback{position:relative;font-size:clamp(9rem,22vw,15rem);line-height:1;color:#fff;filter:drop-shadow(0 24px 24px rgba(0,0,0,.25));animation:floaty 5s ease-in-out infinite}
+.logo-text{font-weight:800;font-size:1.7rem;letter-spacing:-1px;color:#fff;transition:.3s}
+header.scrolled .logo-text{color:var(--teal)}
 .dcard:hover .dimg img{transform:scale(1.1) rotate(-2deg)}
 .dcat{z-index:2;position:absolute;top:12px;left:12px;background:rgba(255,255,255,.9);padding:2px 12px;border-radius:50px;font-size:.72rem;font-weight:700;color:var(--deep)}
 .dbody{padding:18px 18px 16px;display:flex;flex-direction:column;flex:1}
@@ -222,6 +228,7 @@ footer iconify-icon{color:var(--mint)}
   <div class="hero-img" id="heroImg">
     <div class="disc"></div>
     <img src="img/images-removebg-preview (2).png" alt="Minuman Wedrink">
+    <div class="hero-fallback" hidden><iconify-icon icon="lucide:cup-soda"></iconify-icon></div>
     <div class="chip c1"><iconify-icon icon="lucide:leaf"></iconify-icon> Gula asli</div>
     <div class="chip c2"><iconify-icon icon="lucide:snowflake"></iconify-icon> Segar &amp; dingin</div>
   </div>
@@ -410,12 +417,24 @@ footer iconify-icon{color:var(--mint)}
   }));
   $$('[data-count]').forEach(n => cio.observe(n));
 
-  // Tandai gambar yang gagal dimuat (menampilkan nama file yang dicari)
+  // Jika gambar tidak ada (mis. folder img belum di-upload), tampilkan placeholder yang rapi
+  const icons = { new: 'lucide:cake-slice', rec: 'lucide:cup-soda', sundae: 'lucide:ice-cream-cone', milktea: 'lucide:cup-soda', milkshake: 'lucide:glass-water', fresh: 'lucide:citrus', smoothies: 'lucide:glass-water', coffee: 'lucide:coffee' };
   $$('.dimg img').forEach(img => {
-    const mark = () => { img.parentElement.classList.add('broken'); img.parentElement.dataset.file = img.getAttribute('src'); };
+    const mark = () => {
+      const box = img.parentElement; if (box.classList.contains('broken')) return;
+      box.classList.add('broken'); console.warn('Gambar tidak ditemukan:', img.getAttribute('src'));
+      const cd = img.closest('.dcard');
+      box.insertAdjacentHTML('beforeend', `<div class="ph"><iconify-icon icon="${icons[cd.dataset.cat] || 'lucide:cup-soda'}"></iconify-icon><span>${cd.dataset.name}</span></div>`);
+    };
     img.addEventListener('error', mark);
     if (img.complete && img.naturalWidth === 0) mark();
   });
+  const heroPic = $('.hero-img > img');
+  const heroFail = () => { heroPic.hidden = true; $('.hero-fallback').hidden = false; };
+  heroPic.addEventListener('error', heroFail); if (heroPic.complete && heroPic.naturalWidth === 0) heroFail();
+  const logoPic = $('.logo img');
+  const logoFail = () => { $('.logo').innerHTML = '<span class="logo-text">WEDRINK</span>'; };
+  logoPic.addEventListener('error', logoFail); if (logoPic.complete && logoPic.naturalWidth === 0) logoFail();
 
   // Tilt on cards
   $$('.dcard,.about-card').forEach(card => {
