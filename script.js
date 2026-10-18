@@ -2,7 +2,7 @@
   const $ = (s, c = document) => c.querySelector(s), $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const rp = n => 'Rp ' + n.toLocaleString('id-ID');
   // ====== TUJUAN PESANAN (isi salah satu atau keduanya) ======
-  const WA_NUMBER = '';        // Nomor WhatsApp penerima, format 628xxxxxxxxxx (tanpa + dan spasi)
+  const WA_NUMBER = '62895323126887';        // Nomor WhatsApp penerima, format 628xxxxxxxxxx (tanpa + dan spasi)
   const WEB3FORMS_KEY = '';    // Access key dari web3forms.com, pesanan masuk ke email Anda
   const FORM_ENDPOINT = '';    // Alternatif: alamat Formspree, contoh https://formspree.io/f/xxxxxxx
   // ============================================================
