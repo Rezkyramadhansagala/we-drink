@@ -1,7 +1,11 @@
 (() => {
   const $ = (s, c = document) => c.querySelector(s), $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const rp = n => 'Rp ' + n.toLocaleString('id-ID');
-  const WA_NUMBER = ''; // isi nomor WhatsApp, format 628xxxxxxxxxx. Jika diisi, pesanan terkirim lewat WhatsApp.
+  // ====== TUJUAN PESANAN (isi salah satu atau keduanya) ======
+  const WA_NUMBER = '';        // Nomor WhatsApp penerima, format 628xxxxxxxxxx (tanpa + dan spasi)
+  const WEB3FORMS_KEY = '';    // Access key dari web3forms.com, pesanan masuk ke email Anda
+  const FORM_ENDPOINT = '';    // Alternatif: alamat Formspree, contoh https://formspree.io/f/xxxxxxx
+  // ============================================================
 
   // Header, progress, back-to-top
   const header = $('#header'), prog = $('#progress'), topBtn = $('#toTop');
@@ -63,6 +67,25 @@
   }));
   $$('[data-count]').forEach(n => cio.observe(n));
 
+  // Jika gambar tidak ada (mis. folder img belum di-upload), tampilkan placeholder yang rapi
+  const icons = { new: 'lucide:cake-slice', rec: 'lucide:cup-soda', sundae: 'lucide:ice-cream-cone', milktea: 'lucide:cup-soda', milkshake: 'lucide:glass-water', fresh: 'lucide:citrus', smoothies: 'lucide:glass-water', coffee: 'lucide:coffee' };
+  $$('.dimg img').forEach(img => {
+    const mark = () => {
+      const box = img.parentElement; if (box.classList.contains('broken')) return;
+      box.classList.add('broken'); console.warn('Gambar tidak ditemukan:', img.getAttribute('src'));
+      const cd = img.closest('.dcard');
+      box.insertAdjacentHTML('beforeend', `<div class="ph"><iconify-icon icon="${icons[cd.dataset.cat] || 'lucide:cup-soda'}"></iconify-icon><span>${cd.dataset.name}</span></div>`);
+    };
+    img.addEventListener('error', mark);
+    if (img.complete && img.naturalWidth === 0) mark();
+  });
+  const heroPic = $('.hero-img > img');
+  const heroFail = () => { heroPic.hidden = true; $('.hero-fallback').hidden = false; };
+  heroPic.addEventListener('error', heroFail); if (heroPic.complete && heroPic.naturalWidth === 0) heroFail();
+  const logoPic = $('.logo img');
+  const logoFail = () => { $('.logo').innerHTML = '<span class="logo-text">WEDRINK</span>'; };
+  logoPic.addEventListener('error', logoFail); if (logoPic.complete && logoPic.naturalWidth === 0) logoFail();
+
   // Tilt on cards
   $$('.dcard,.about-card').forEach(card => {
     card.addEventListener('mousemove', e => {
@@ -123,11 +146,28 @@
   render();
 
   // Order form
-  $('#orderForm').addEventListener('submit', e => {
+  $('#orderForm').addEventListener('submit', async e => {
     e.preventDefault();
-    const msg = `Halo WEDRINK, saya ingin memesan:\nNama: ${$('#fName').value}\nPesanan: ${$('#fOrder').value}\nTotal: ${rp(total())}\nNo. Telepon: ${$('#fPhone').value}\nAlamat: ${$('#fAddr').value}`;
-    if (WA_NUMBER) window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-    $('#formMsg').textContent = `Terima kasih, ${$('#fName').value}! Pesanan Anda sudah dicatat.`;
-    cart = {}; render(); e.target.reset(); $('#fTotal').textContent = rp(0);
+    const form = e.target, btn = $('button[type=submit]', form), msgEl = $('#formMsg');
+    const d = { nama: $('#fName').value, pesanan: $('#fOrder').value, total: rp(total()), telepon: $('#fPhone').value, alamat: $('#fAddr').value };
+    const text = `Halo WEDRINK, saya ingin memesan:\nNama: ${d.nama}\nPesanan: ${d.pesanan}\nTotal: ${d.total}\nNo. Telepon: ${d.telepon}\nAlamat: ${d.alamat}`;
+    if (!WA_NUMBER && !WEB3FORMS_KEY && !FORM_ENDPOINT) {
+      msgEl.textContent = 'Mode demo: belum ada tujuan pesanan. Isi WA_NUMBER atau WEB3FORMS_KEY di js/script.js.'; return;
+    }
+    if (WA_NUMBER) window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank'); // dibuka dulu agar tidak diblokir browser
+    let ok = !!WA_NUMBER;
+    if (WEB3FORMS_KEY || FORM_ENDPOINT) {
+      btn.disabled = true; msgEl.textContent = 'Mengirim pesanan...';
+      try {
+        const body = WEB3FORMS_KEY ? { access_key: WEB3FORMS_KEY, subject: 'Pesanan baru WEDRINK', from_name: 'Website WEDRINK', ...d } : { ...d, message: text };
+        const r = await fetch(WEB3FORMS_KEY ? 'https://api.web3forms.com/submit' : FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) });
+        ok = r.ok;
+      } catch (err) { ok = false; }
+      btn.disabled = false;
+    }
+    if (ok) {
+      msgEl.textContent = `Terima kasih, ${d.nama}! Pesanan Anda sudah dikirim.`;
+      cart = {}; render(); form.reset(); $('#fTotal').textContent = rp(0);
+    } else msgEl.textContent = 'Pesanan gagal dikirim. Coba lagi atau hubungi kami langsung.';
   });
 })();
